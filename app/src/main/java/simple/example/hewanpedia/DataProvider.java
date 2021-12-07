@@ -1,0 +1,93 @@
+package simple.example.hewanpedia;
+
+import android.content.Context;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import simple.example.hewanpedia.model.Anjing;
+import simple.example.hewanpedia.model.Buaya;
+import simple.example.hewanpedia.model.Hewan;
+import simple.example.hewanpedia.model.Kucing;
+
+public class DataProvider {
+    private static List<Hewan> hewans = new ArrayList<>();
+
+    private static List<Kucing> initDataKucing(Context ctx) {
+        List<Kucing> kucings = new ArrayList<>();
+        kucings.add(new Kucing("Angora", "Turki",
+                "Aslinya berasal dari Ankara, Turki dengan ciri khas berbulu panjang dan lembut", R.drawable.cat_angora));
+        kucings.add(new Kucing("Bengal", "Inggris",
+                "Merupakan hasil persilangan antara Kucing Leopard Asia dengan kucing domestik Inggris", R.drawable.cat_bengal));
+        kucings.add(new Kucing("Birmani", "Birma/Myanmar",
+                "Konon awalnya merupakan ras kucing yand biasa menemani para biksu yang menetap pada kuil di Birma", R.drawable.cat_birman));
+        kucings.add(new Kucing("Persia", "Iran",
+                "Kucing berbulu panjang dengan wajah bundar dan hidung pesek. Awalnya berasal dari Iran kemudian diimpor ke Italia", R.drawable.cat_persia));
+        kucings.add(new Kucing("Siam", "Thailand",
+                "Kucing hasil turunan dari Wichian Maat (Kucing Thailand) dengan ciri khas berbadan panjang dan langsing, wajah lonjong, telinga lebar, dan mata kebiruan", R.drawable.cat_siam));
+        kucings.add(new Kucing("Siberia", "Rusia",
+                "Kucing domestik Rusia dengan bulu lebat dan badan besar tapi sangat lincah dan terkenal dengan kemampuan melompatnya ", R.drawable.cat_siberian));
+        return kucings;
+    }
+
+    private static List<Anjing> initDataAnjing(Context ctx) {
+        List<Anjing> anjings = new ArrayList<>();
+        anjings.add(new Anjing("Bulldog", "Inggris",
+                "Anjing populer yang dikenal dengan badan yang gemuk berotot, wajah seperti kain kusut, dan hidung yang pesek", R.drawable.dog_bulldog));
+        anjings.add(new Anjing("Husky", "Alaska,Siberia,Finlandia (daerah bersalju) ",
+                "Anjing jenis khusus yang awalnya digunakan untuk menarik kereta salju", R.drawable.dog_husky));
+        anjings.add(new Anjing("Kintamani", "Indonesia",
+                "Ras anjing asli pulau Bali ", R.drawable.dog_kintamani));
+        anjings.add(new Anjing("Samoyed", "Rusia",
+                "Anjing yang berasal dari Siberia yang awalnya biasa digunakan untuk menjaga ternak oleh suku Samoyed", R.drawable.dog_samoyed));
+        anjings.add(new Anjing("Shepherd", "Jerman",
+                "Anjing pintar dan kuat, sekarang banyak digunakan sebagai anjing penjaga, pengawal, dan anjing polisi (K9)", R.drawable.dog_shepherd));
+        anjings.add(new Anjing("Shiba", "Jepang",
+                "Anjing dari daerah Shiba ini gesit dan lincah sehingga awalnya banyak digunakan untuk berburu ", R.drawable.dog_shiba));
+        return anjings;
+    }
+
+    private static List<Buaya>initDataBuaya(Context ctx) {
+        List<Buaya> buayas = new ArrayList<>();
+        buayas.add(new Buaya("Buaya Nil", "Afrika",
+                "Buaya nil termasuk jenis buaya yang paling berbahaya di dunia. Ia dapat ditemukan di danau, perairan air tawar atau air payau. Ukuran tubuh buaya nil juga terbilang besar, bisa mencapai 5-6 meter", R.drawable.nil));
+        buayas.add(new Buaya("Buaya air asin", "India Timur",
+                "Buaya dengan nama latin Crocodylus porosus ini tak hanya ganas memangsa tapi juga menjadi salah satu hewan reptil terbesar di dunia. Panjang buaya air asin bisa mencapai 6,5 - 7 meter dengan berat hingga 1.000 kg lebih", R.drawable.air_asin));
+        buayas.add(new Buaya("Buaya Alligator Amerika", "Amerika Serikat",
+                "Meski terbilang berbahaya, kebanyakan alligator tumbuh dengan ukuran yang lebih kecil dari buaya pada umumnya, yakni sekitar 4-4,5 meter", R.drawable.aligator));
+        buayas.add(new Buaya("Buaya Gharial", "India Utara dan Nepal",
+                "Ciri buaya ganas yang satu ini bisa dilihat dari bentuk rahangnya yang panjang, sangat ramping, dan bergigi tajam. Gharial tidak menyerang manusia, tetapi tampaknya ia memakan mayat yang mengapung dalam upacara pemakaman di Sungai Gangga", R.drawable.gharial));
+        buayas.add(new Buaya("Caimam Hitam", "Amerika Selatan",
+                "Satu Lagi Jenis Buaya Yang termasuk juga paling berbahaya,Ukuran tubuh Caiman hitam jantan bisa sampai sekitar 4 meter. Ganasnya Caiman hitam karena buaya ini dapat memangsa banyak jenis hewan, mulai dari ikan hingga reptil lainnya", R.drawable.caimam_hitam));
+        buayas.add(new Buaya("Buaya Putih", "Amerika ",
+                "Dalam bahasa Inggris buaya dikenal sebagai crocodile. Nama ini berasal dari penyebutan orang Yunani terhadap buaya yang mereka saksikan di Sungai Nil, krokodilos; kata bentukan yang berakar dari kata kroko, yang berarti ‘batu kerikil’, dan deilos yang berarti ‘cacing’ atau ‘orang", R.drawable.buayaputih));
+        return buayas;
+    }
+
+    private static void initAllHewans(Context ctx) {
+        hewans.addAll(initDataKucing(ctx));
+        hewans.addAll(initDataAnjing(ctx));
+        hewans.addAll(initDataBuaya(ctx));
+    }
+
+    public static List<Hewan> getAllHewan(Context ctx) {
+        if (hewans.size() == 0) {
+            initAllHewans(ctx);
+        }
+        return  hewans;
+    }
+
+    public static List<Hewan> getHewansByTipe(Context ctx, String jenis) {
+        List<Hewan> hewansByType = new ArrayList<>();
+        if (hewans.size() == 0) {
+            initAllHewans(ctx);
+        }
+        for (Hewan h : hewans) {
+            if (h.getJenis().equals(jenis)) {
+                hewansByType.add(h);
+            }
+        }
+        return hewansByType;
+    }
+
+}
