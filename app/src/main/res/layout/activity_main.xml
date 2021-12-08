@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kucing &amp; Anjing &amp; Buaya"
+        android:text="Kucing &amp; Kuda &amp; Buaya"
         android:fontFamily="casual"
         android:textStyle="bold"
         android:textColor="@color/design_default_color_primary_dark"
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
-            android:src="@drawable/dog_kintamani"
+            android:src="@drawable/kuda_ferisian"
             android:scaleType="fitCenter"
             />
         <ImageButton

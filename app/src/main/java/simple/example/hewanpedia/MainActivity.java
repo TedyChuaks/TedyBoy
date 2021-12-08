@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnBuaya = findViewById(R.id.btn_buka_ras_Buaya);
         button = (Button) findViewById(R.id.dialog_button);
         btnKucing.setOnClickListener(view -> bukaGaleri("Kucing"));
-        btnAnjing.setOnClickListener(view -> bukaGaleri("Anjing"));
+        btnAnjing.setOnClickListener(view -> bukaGaleri("Kuda"));
         btnBuaya.setOnClickListener(view -> bukaGaleri("Buaya"));
         button.setOnClickListener(new View.OnClickListener(){
             @Override

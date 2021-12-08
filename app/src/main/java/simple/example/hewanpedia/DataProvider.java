@@ -9,6 +9,7 @@ import simple.example.hewanpedia.model.Anjing;
 import simple.example.hewanpedia.model.Buaya;
 import simple.example.hewanpedia.model.Hewan;
 import simple.example.hewanpedia.model.Kucing;
+import simple.example.hewanpedia.model.Kuda;
 
 public class DataProvider {
     private static List<Hewan> hewans = new ArrayList<>();
@@ -30,21 +31,16 @@ public class DataProvider {
         return kucings;
     }
 
-    private static List<Anjing> initDataAnjing(Context ctx) {
-        List<Anjing> anjings = new ArrayList<>();
-        anjings.add(new Anjing("Bulldog", "Inggris",
-                "Anjing populer yang dikenal dengan badan yang gemuk berotot, wajah seperti kain kusut, dan hidung yang pesek", R.drawable.dog_bulldog));
-        anjings.add(new Anjing("Husky", "Alaska,Siberia,Finlandia (daerah bersalju) ",
-                "Anjing jenis khusus yang awalnya digunakan untuk menarik kereta salju", R.drawable.dog_husky));
-        anjings.add(new Anjing("Kintamani", "Indonesia",
-                "Ras anjing asli pulau Bali ", R.drawable.dog_kintamani));
-        anjings.add(new Anjing("Samoyed", "Rusia",
-                "Anjing yang berasal dari Siberia yang awalnya biasa digunakan untuk menjaga ternak oleh suku Samoyed", R.drawable.dog_samoyed));
-        anjings.add(new Anjing("Shepherd", "Jerman",
-                "Anjing pintar dan kuat, sekarang banyak digunakan sebagai anjing penjaga, pengawal, dan anjing polisi (K9)", R.drawable.dog_shepherd));
-        anjings.add(new Anjing("Shiba", "Jepang",
-                "Anjing dari daerah Shiba ini gesit dan lincah sehingga awalnya banyak digunakan untuk berburu ", R.drawable.dog_shiba));
-        return anjings;
+    private static List<Kuda> initDataKuda(Context ctx) {
+        List<Kuda> kudas = new ArrayList<>();
+        kudas.add(new Kuda("Shire", "Britain",
+                "Kuda ini dikenal sebagai kuda penarik", R.drawable.kuda_shire));
+        kudas.add(new Kuda("Iceland", "Amerika Utara ",
+                "The Kuda Iceland adalah baka kuda yang dikembangkan di Iceland. Walaupun kuda kecil, kadang-kadang berukuran kuda, kebanyakan pendaftar untuk Iceland menyebutnya sebagai kuda", R.drawable.kuda_islandia));
+        kudas.add(new Kuda("Friesian", "Belanda",
+                "Kuda ini berasal dari friesland di dalam belanda ", R.drawable.kuda_ferisian));
+
+        return kudas;
     }
 
     private static List<Buaya>initDataBuaya(Context ctx) {
@@ -55,18 +51,12 @@ public class DataProvider {
                 "Buaya dengan nama latin Crocodylus porosus ini tak hanya ganas memangsa tapi juga menjadi salah satu hewan reptil terbesar di dunia. Panjang buaya air asin bisa mencapai 6,5 - 7 meter dengan berat hingga 1.000 kg lebih", R.drawable.air_asin));
         buayas.add(new Buaya("Buaya Alligator Amerika", "Amerika Serikat",
                 "Meski terbilang berbahaya, kebanyakan alligator tumbuh dengan ukuran yang lebih kecil dari buaya pada umumnya, yakni sekitar 4-4,5 meter", R.drawable.aligator));
-        buayas.add(new Buaya("Buaya Gharial", "India Utara dan Nepal",
-                "Ciri buaya ganas yang satu ini bisa dilihat dari bentuk rahangnya yang panjang, sangat ramping, dan bergigi tajam. Gharial tidak menyerang manusia, tetapi tampaknya ia memakan mayat yang mengapung dalam upacara pemakaman di Sungai Gangga", R.drawable.gharial));
-        buayas.add(new Buaya("Caimam Hitam", "Amerika Selatan",
-                "Satu Lagi Jenis Buaya Yang termasuk juga paling berbahaya,Ukuran tubuh Caiman hitam jantan bisa sampai sekitar 4 meter. Ganasnya Caiman hitam karena buaya ini dapat memangsa banyak jenis hewan, mulai dari ikan hingga reptil lainnya", R.drawable.caimam_hitam));
-        buayas.add(new Buaya("Buaya Putih", "Amerika ",
-                "Dalam bahasa Inggris buaya dikenal sebagai crocodile. Nama ini berasal dari penyebutan orang Yunani terhadap buaya yang mereka saksikan di Sungai Nil, krokodilos; kata bentukan yang berakar dari kata kroko, yang berarti ‘batu kerikil’, dan deilos yang berarti ‘cacing’ atau ‘orang", R.drawable.buayaputih));
         return buayas;
     }
 
     private static void initAllHewans(Context ctx) {
         hewans.addAll(initDataKucing(ctx));
-        hewans.addAll(initDataAnjing(ctx));
+        hewans.addAll(initDataKuda(ctx));
         hewans.addAll(initDataBuaya(ctx));
     }
 

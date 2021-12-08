@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="simple.example.hewanpedia">
 
     <application
@@ -12,7 +13,8 @@
 
         <activity android:name=".MainActivity2"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            tools:ignore="Instantiatable" />
 
 
         <activity android:name="simple.example.hewanpedia.MainActivity">
